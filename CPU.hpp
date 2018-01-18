@@ -22,7 +22,9 @@ class CPU
 {
 private:
 	std::array<Byte, 64000> main_memory;
+	void verifyHeaders();
 public:
 	CPU(){};
 	void loadRom(const std::string& name);
+
 };
