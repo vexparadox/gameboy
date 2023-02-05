@@ -33,11 +33,10 @@ struct Instruction
 
 class CPU
 {
-private:
+public:
 	std::array<Byte, 64000> main_memory;
 	std::vector<Byte> loaded_rom;
 	void verifyHeaders();
-public:
 	CPU(){};
 	//registers, Flag register is reg
 	Byte reg_A, reg_B, reg_C, reg_D, reg_E, reg_H, reg_L, reg_Flag;

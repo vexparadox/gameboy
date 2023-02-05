@@ -3,7 +3,8 @@
 void CPU::loadRom(const std::string& filepath)
 {
 	std::fill(main_memory.begin(), main_memory.end(), 0x00);
-	if (FILE *fp = fopen(filepath.c_str(), "rb")){
+	if (FILE *fp = fopen(filepath.c_str(), "rb"))
+	{
 		std::array<Byte, 1000> buffer;
 
 		while(size_t len = fread(&buffer[0], 1, sizeof(buffer), fp))
@@ -11,7 +12,7 @@ void CPU::loadRom(const std::string& filepath)
 			std::copy(buffer.begin(), buffer.end(), std::back_inserter(loaded_rom));
 		}
 		fclose(fp); // close the file
-		//verifyHeaders();
+		verifyHeaders();
 	}
 }
 

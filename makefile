@@ -1,2 +1,2 @@
 all:
-	g++ *.cpp -o gboy -std=c++14 -g
+	g++ source/*.cpp -o gboy -std=c++17 -g
